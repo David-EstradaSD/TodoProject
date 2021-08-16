@@ -1,0 +1,46 @@
+package com.skilldistillery.todo.entities;
+
+import java.util.Scanner;
+
+public class Practice {
+	public static void main(String[] args) {
+		boolean a, b, c;
+		
+		Scanner scanner = new Scanner(System.in);
+		int N = scanner.nextInt();
+		
+		if (N % 2 != 0) {
+			System.out.println("Weird");
+			if (N > 20 && N % 2 == 0) {
+				System.out.println("Not Weird");
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		if (a = true) {
+			b = true;
+		} else {
+			c = true;
+		}
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+
+}

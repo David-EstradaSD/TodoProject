@@ -1,0 +1,60 @@
+package com.skilldistillery.todoapp.services;
+
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.skilldistillery.todo.entities.Todo;
+import com.skilldistillery.todo.entities.User;
+import com.skilldistillery.todoapp.repositories.TodoRepository;
+import com.skilldistillery.todoapp.repositories.UserRepository;
+
+@Service
+public class TodoServiceImpl implements TodoService {
+	
+	@Autowired
+	private TodoRepository todoRepo;
+	
+	@Autowired
+	private UserRepository userRepo;
+
+	@Override
+	public Set<Todo> index(String username) {
+		Set<Todo> todoSet = new HashSet<>();
+		todoSet.addAll(todoRepo.findAll());
+		return todoSet;
+	}
+
+	@Override
+	public Todo show(String username, int tid) {
+		Optional<Todo> todo = todoRepo.findById(tid);
+		if (todo.isPresent()) {
+			return todo.get();
+		}
+		return null;
+	}
+
+	@Override
+	public Todo create(String username, Todo todo) {
+		User user = userRepo.findByUsername(username);
+		todo.setUser(user);
+		todoRepo.saveAndFlush(todo);
+		return todo;
+	}
+
+	@Override
+	public Todo update(String username, int tid, Todo todo) {
+		todoRepo.saveAndFlush(todo);
+		return todo;
+	}
+
+	@Override
+	public boolean destroy(String username, int tid) {
+		todoRepo.deleteById(tid);
+		return !todoRepo.existsById(tid);
+	}
+
+}

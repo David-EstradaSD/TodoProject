@@ -1,0 +1,8 @@
+package com.skilldistillery.todo.entities;
+
+public class Practice {
+	public static void main(String[] args) {
+		
+	}
+
+}

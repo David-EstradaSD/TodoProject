@@ -1,0 +1,66 @@
+package com.skilldistillery.todoapp.controllers;
+
+import java.util.Set;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.skilldistillery.todo.entities.Todo;
+import com.skilldistillery.todoapp.repositories.TodoRepository;
+import com.skilldistillery.todoapp.services.TodoService;
+
+@RestController
+@RequestMapping("api")
+@CrossOrigin({"*", "http://localhost:4201"}) // this is for our ngTodo angular app which is served on port 4201
+public class TodoController {
+
+	@Autowired
+	TodoService todoService;
+
+	@Autowired
+	TodoRepository todoRepo;
+	
+//	Todos are a sub resource of a User and will have a base url of todos. 
+//	Our service requires a username string with each method call, 
+//	  which will eventually come from our login process
+//	For now, just hardcoding a username field with an existing user from the DB
+	private String username = "shaun";
+	
+	@GetMapping("todos")
+	public Set<Todo> index(HttpServletRequest req, HttpServletResponse res) {
+		return todoService.index(username);	
+	}
+
+	@GetMapping("todos/{tid}")
+	public Todo show(HttpServletRequest req, HttpServletResponse res, int tid) {
+		Todo todo = todoService.show(username, tid);
+		if (todo == null) {
+			res.setStatus(404); // Not Found
+		}
+		return todo;
+	}
+
+	@PostMapping("todos")
+	public Todo create(HttpServletRequest req, HttpServletResponse res, Todo todo) {
+		return todo;
+	}
+
+	@PutMapping("todos/{tid}")
+	public Todo update(HttpServletRequest req, HttpServletResponse res, int tid, Todo todo) {
+		return todo;
+	}
+
+//  DELETE todos/{tid}
+	@DeleteMapping("todos/{tid}")
+	public void destroy(HttpServletRequest req, HttpServletResponse res, int tid) {
+	}
+
+}

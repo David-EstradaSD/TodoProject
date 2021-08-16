@@ -1,0 +1,23 @@
+package com.skilldistillery.todoapp.controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.skilldistillery.todoapp.repositories.TodoRepository;
+import com.skilldistillery.todoapp.services.TodoService;
+
+@RestController
+@RequestMapping("api")
+public class TodoController {
+	
+	@Autowired
+	TodoService todoService;
+	
+	@Autowired
+	TodoRepository todoRepo;
+	
+	
+	
+
+}

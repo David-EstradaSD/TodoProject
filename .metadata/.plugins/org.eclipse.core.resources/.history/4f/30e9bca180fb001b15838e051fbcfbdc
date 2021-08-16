@@ -1,0 +1,27 @@
+package com.skilldistillery.todo.entities;
+
+import java.util.Scanner;
+
+public class Practice {
+	public static void main(String[] args) {
+		boolean a, b, c;
+		
+		Scanner scan = new Scanner(System.in);
+		int i = scan.nextInt();
+		
+		
+
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+}

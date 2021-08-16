@@ -1,0 +1,23 @@
+package com.skilldistillery.todoapp.services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+import com.skilldistillery.todo.entities.User;
+
+@Service
+public class AuthServiceImpl implements AuthService {
+	
+	@Autowired
+	private PasswordEncoder encoder;
+
+	@Override
+	public User register(User user) {
+		
+		user.setPassword(encoder.encode(user.getPassword()));
+		
+		return null;
+	}
+
+}

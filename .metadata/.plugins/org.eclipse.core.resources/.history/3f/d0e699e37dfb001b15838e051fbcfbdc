@@ -1,0 +1,39 @@
+package com.skilldistillery.todo.entities;
+
+public class Practice {
+	public static void main(String[] args) {
+		boolean a, b, c;
+		
+		int n;
+		
+		if (n % 2 != 0) {
+			System.out.println("Weird");
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		if (a = true) {
+			b = true;
+		} else {
+			c = true;
+		}
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+
+}

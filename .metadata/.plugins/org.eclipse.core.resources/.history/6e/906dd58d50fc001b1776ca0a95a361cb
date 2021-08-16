@@ -1,0 +1,6 @@
+package com.skilldistillery.todoapp.controllers;
+
+@RestController
+public class AuthController {
+
+}
