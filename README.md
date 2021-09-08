@@ -7,3 +7,6 @@ With this project, I became familiar with Spring Data and JPA repositories, as w
 * Java, JPA, Spring Data
 * SQL ( _MySQLWorkbench_ )
 * JavaScript, Angular, HTML, CSS 
+
+### How to Run
+This app is currently deployed to my EC2. If you'd like to preview it, send me an email or messsage on LinkedIn.
