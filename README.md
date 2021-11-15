@@ -1,13 +1,12 @@
 # TodoProject
 
 ### Overview 
-With this project, I became more familiar with Spring Data and JPA repositories, with Angular for the front-end design and with implementing authorization through Spring Security. The model is a simple task manager. This was a solo assignment for Skill Distillery.
+This is a simple "_Todo_" app with a simple task manager model. With this project, I became more familiar with Spring Data and JPA repositories, with Angular for the front-end design and with implementing authorization through Spring Security.
 
 ### Technologies Used
-* Java
-* Spring Security, Spring Data, JPA ( _Spring framework_ )
+* Java 8, JavaScript, Angular, HTML, CSS 
+* Spring Security, Spring Data, JPA ( _Java Persistence API_ )
 * SQL ( _MySQLWorkbench_ )
-* JavaScript, Angular, HTML, CSS 
 * Authorization ( _user accounts_ )
 
 ### How to Run
