@@ -1,4 +1,4 @@
-# TodoProject
+# Todo (_Angular & Spring Security_)
 
 ### Overview 
 This is a simple "_Todo_" app with a simple task manager model. With this project, I became more familiar with Spring Data and JPA repositories, with Angular for the front-end design and with implementing authorization through Spring Security.
